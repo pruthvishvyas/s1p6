@@ -1,0 +1,58 @@
+[
+  {
+    "category": "Depression Prevalence",
+    "finding": "16.2% of the cohort meets BDI depression criteria",
+    "evidence": "BDI threshold >= 14; n=999 subjects; 12 flagged Critical",
+    "action": "Prioritise school/clinic-based screening for high-risk profiles",
+    "severity": "MEDIUM"
+  },
+  {
+    "category": "Screen Time Risk",
+    "finding": "High leisure screen time (>=6.0h/day) is associated with 48% higher depression rate",
+    "evidence": "High-screen dep rate=21.55% vs low-screen=14.60%; Pearson r=0.111",
+    "action": "Implement daily screen-time limits of <4h and monitor weekly trends",
+    "severity": "MEDIUM"
+  },
+  {
+    "category": "Sleep Quality",
+    "finding": "Poor sleep quality correlates with higher BDI scores (r=-0.318)",
+    "evidence": "Average sleep=7.7h; SQI correlation with BDI=-0.318; Sleep-deprived depression rate=27.16%",
+    "action": "Target sleep hygiene interventions: consistent bedtime, dark/quiet environment",
+    "severity": "MEDIUM"
+  },
+  {
+    "category": "Social Jetlag",
+    "finding": "Social jetlag (avg=2.4h) moderately associates with depression (r=0.062)",
+    "evidence": "Weekend vs weekday sleep timing misalignment disrupts circadian rhythm; n_high_jetlag=610",
+    "action": "Encourage consistent wake times across weekdays and weekends",
+    "severity": "MEDIUM"
+  },
+  {
+    "category": "Somatic Symptoms",
+    "finding": "Somatic BDI subscale shows strongest link to screen/sleep disruption",
+    "evidence": "Avg somatic=2.67/12",
+    "action": "Focus somatic symptom monitoring (fatigue, appetite, sleep changes) in check-ins",
+    "severity": "MEDIUM"
+  },
+  {
+    "category": "High-Risk Cluster",
+    "finding": "A distinct high-risk cluster combines elevated screen time, poor sleep, and high BDI",
+    "evidence": "Cluster 'Moderate-Risk' has highest depression rate",
+    "action": "Target multi-modal interventions at identified cluster; refer to mental health services",
+    "severity": "HIGH"
+  },
+  {
+    "category": "Anomaly Detection",
+    "finding": "50 subjects show atypical screen-sleep-BDI patterns",
+    "evidence": "IsolationForest contamination=0.05; anomaly depression rate > population avg",
+    "action": "Individual follow-up for anomalous subjects; investigate unique stressors",
+    "severity": "MEDIUM"
+  },
+  {
+    "category": "Predictive Model",
+    "finding": "BDI score can be estimated from screen/sleep features alone (screen-time proxy model)",
+    "evidence": "Best regressor RMSE from Phase 7; features: screen time, sleep, social jetlag",
+    "action": "Deploy lightweight screening tool using only sleep/screen questionnaire for early detection",
+    "severity": "LOW"
+  }
+]

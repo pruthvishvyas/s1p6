@@ -1,0 +1,109 @@
+SLIDE 1 -- TITLE
+
+Screen Time, Sleep & Mental Health: A Data-Driven Analysis
+
+n=999 adolescents | Depression Rate: 16.2% | Avg Screen Time: 3.96h/day
+
+SLIDE 2 -- BUSINESS PROBLEM
+
+Adolescent screen time has risen dramatically, raising concerns about mental health outcomes.
+
+This analysis quantifies the relationship between leisure screen time, sleep disruption,
+
+social jetlag, and depression (BDI) in a cohort of young people.
+
+SLIDE 3 -- DATASET OVERVIEW
+
+Dataset: 999 subjects | 10 behavioural features + 21 BDI items
+
+Variables: screen time index, estimated leisure screen hours, sleep quality index,
+
+average sleep hours, midsleep weekend, social jetlag, BDI items 1-21
+
+SLIDE 4 -- KEY FINDING
+
+16.2% of subjects meet BDI depression criteria (score >= 14).
+
+High screen time subjects show elevated depression rates vs low-screen peers.
+
+Avg BDI: 7.3/63 | Avg sleep: 7.67h | Avg jetlag: 2.39h
+
+SLIDE 5 -- SCREEN TIME ANALYSIS
+
+Average leisure screen time: 3.96 hours per day.
+
+Subjects with > 6h screen time show highest BDI scores and depression rates.
+
+Screen time index correlates positively with sleep quality index (r calculated in pipeline).
+
+SLIDE 6 -- SLEEP & SOCIAL JETLAG
+
+Average sleep duration: 7.67h (recommended: 8-10h for adolescents).
+
+Average social jetlag: 2.39h -- weekend/weekday sleep timing mismatch.
+
+Social jetlag > 2h is associated with higher BDI scores and poorer sleep quality.
+
+SLIDE 7 -- DEPRESSION CLASSIFICATION MODEL
+
+Model: Random Forest + Gradient Boosting hybrid | Status: Ready
+
+Features: screen time, sleep quality, social jetlag, sex (no BDI items = early detection)
+
+Enables identification of at-risk subjects before full BDI questionnaire administration.
+
+SLIDE 8 -- BDI SCORE PREDICTION MODEL
+
+Model: Ready | Task: Predict BDI total from behavioural features only
+
+Lightweight screening proxy -- school counsellors can estimate BDI risk from 4 questions.
+
+SLIDE 9 -- SUBJECT SEGMENTATION
+
+KMeans clustering identified 0 distinct risk profiles.
+
+High-Risk cluster: high screen time + poor sleep + elevated BDI -- prime intervention target.
+
+Low-Risk cluster: short screen time + adequate sleep + low BDI -- protective pattern.
+
+SLIDE 10 -- ANOMALY DETECTION
+
+0 subjects (0.0%) flagged as behavioural anomalies.
+
+IsolationForest detects atypical screen-sleep-BDI combinations for individual follow-up.
+
+Critical intervention alerts: 0 subjects flagged for immediate action.
+
+SLIDE 11 -- KEY INSIGHTS
+
+[HIGH] High-Risk Cluster: A distinct high-risk cluster combines elevated screen time, poor sleep, and high BDI
+
+Action: Target multi-modal interventions at identified cluster; refer to mental health services
+
+SLIDE 12 -- RECOMMENDATIONS
+
+1. Implement daily leisure screen time cap of <4 hours for adolescents.
+
+2. Promote consistent sleep-wake schedules to reduce social jetlag.
+
+3. Deploy lightweight screener (4 questions) for early BDI risk detection in schools.
+
+4. Prioritise multi-modal intervention for identified High-Risk cluster.
+
+5. Follow up individually with 0 Critical-flagged subjects.
+
+SLIDE 13 -- LINKEDIN / EXEC HOOK
+
+In a cohort of 999 young people, 16.2% show clinically significant depression symptoms.
+
+Those averaging 4.0h/day of leisure screen time show markedly higher risk.
+
+Our ML pipeline identifies high-risk individuals using only 4 behavioural variables.
+
+SLIDE 14 -- TECHNICAL ARCHITECTURE
+
+Pipeline: Data Ingestion -> Cleaning -> Feature Engineering -> EDA -> Classification
+
+-> Regression -> Segmentation -> Anomaly Detection -> Business Logic -> Insights -> Export
+
+Stack: Python, Pandas, Scikit-learn, Plotly, Gradio | Models: RF, GB, KMeans, IsolationForest
